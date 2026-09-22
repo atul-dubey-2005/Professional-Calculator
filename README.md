@@ -8,16 +8,6 @@ A modern and responsive calculator application built using **HTML**, **CSS**, an
 
 🔗 **Demo:** https://your-demo-link.vercel.app
 
-> Replace the above link with your GitHub Pages or Vercel deployment.
-
----
-
-## 📸 Screenshot
-
-> Add a screenshot of your project here.
-
-![Calculator Screenshot](assets/screenshot.png)
-
 ---
 
 ## ✨ Features
