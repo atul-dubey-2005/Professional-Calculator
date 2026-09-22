@@ -6,28 +6,30 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding: 20px;
 }
 
-/* Authentication Box Styling */
+/* Authentication Box */
 .auth-container {
-    width: 350px;
+    width: 380px;
     background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 40px 30px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     text-align: center;
     color: white;
 }
 
 .auth-form h2 {
     margin-bottom: 25px;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
 }
 
@@ -38,7 +40,7 @@ body {
     border: none;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.9);
-    font-size: 16px;
+    font-size: 15px;
     outline: none;
 }
 
@@ -47,9 +49,12 @@ body {
     height: 45px;
     background: #ff9800;
     color: #fff;
-    font-size: 18px;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
     border-radius: 8px;
-    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 .auth-btn:hover {
@@ -69,27 +74,31 @@ body {
 }
 
 .error-msg {
-    color: #ff4c4c;
+    color: #ff5252;
     font-size: 13px;
     margin-top: 10px;
-    height: 15px;
+    min-height: 18px;
 }
 
-/* Calculator Container */
+/* Main Container & Layout */
 .container {
-    width: 100%;
     display: flex;
+    gap: 20px;
+    max-width: 950px;
+    width: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
+/* Calculator Wrapper */
 .calculator {
-    width: 450px;
+    width: 560px;
     background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 25px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
 .header {
@@ -97,77 +106,132 @@ body {
     justify-content: space-between;
     align-items: center;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.header h2 {
-    font-size: 24px;
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
     font-weight: 600;
 }
 
-.logout-btn {
-    background: #e53935;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.header-actions {
     display: flex;
-    justify-content: center;
+    gap: 10px;
     align-items: center;
 }
 
-.logout-btn:hover {
-    background: #d32f2f;
+.badge-btn {
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
 }
 
+.icon-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.icon-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.logout-btn:hover {
+    background: #e53935;
+}
+
+/* Displays */
 .display-container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 15px;
     margin-bottom: 20px;
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+#sub-display {
+    min-height: 20px;
+    font-size: 14px;
+    color: #777;
+    text-align: right;
+    word-wrap: break-word;
 }
 
 #display {
     width: 100%;
-    height: 80px;
+    height: 50px;
     border: none;
     outline: none;
-    border-radius: 12px;
-    background: #fff;
+    background: transparent;
     color: #222;
     text-align: right;
-    padding: 15px;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: bold;
-    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.15);
-    letter-spacing: 1px;
 }
 
+/* Keypad Grid (6 Columns) */
 .buttons {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
 }
 
 button {
-    height: 60px;
+    height: 52px;
     border: none;
     outline: none;
-    border-radius: 12px;
-    font-size: 20px;
+    border-radius: 10px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     background: #ffffff;
     color: #333;
-    transition: 0.2s;
+    transition: 0.15s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 button:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 
 button:active {
-    transform: scale(0.95);
+    transform: translateY(0);
 }
 
-/* Specific Button Styles */
+.mem-btn {
+    background: #4a5568;
+    color: #fff;
+    font-size: 13px;
+}
+
+.mem-btn:hover {
+    background: #2d3748;
+}
+
+.sci-btn {
+    background: #37474f;
+    color: #fff;
+    font-size: 14px;
+}
+
+.sci-btn:hover {
+    background: #455a64;
+}
+
 .operator {
     background: #ff9800;
     color: #fff;
@@ -177,40 +241,102 @@ button:active {
     background: #fb8c00;
 }
 
-.sci-btn {
-    background: #37474f;
-    color: #fff;
-    font-size: 17px;
-}
-
-.sci-btn:hover {
-    background: #455a64;
-}
-
 .equal {
     background: #4CAF50;
     color: #fff;
+    font-size: 22px;
 }
 
 .equal:hover {
     background: #43a047;
 }
 
-/* Mobile Responsiveness */
-@media(max-width: 500px) {
+.active-shift {
+    background: #e91e63 !important;
+    color: white;
+}
+
+/* History Drawer */
+.history-panel {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    display: none;
+    max-height: 560px;
+    flex-direction: column;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.history-list {
+    overflow-y: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.history-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: right;
+}
+
+.history-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.history-expr {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.history-res {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.empty-msg {
+    text-align: center;
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Mobile Responsive */
+@media(max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
     .calculator {
-        width: 95%;
-        padding: 18px;
+        width: 100%;
+    }
+    .history-panel {
+        width: 100%;
+        max-height: 250px;
+    }
+    .buttons {
+        gap: 6px;
     }
     button {
-        height: 50px;
-        font-size: 16px;
-    }
-    .sci-btn {
-        font-size: 14px;
-    }
-    #display {
-        height: 65px;
-        font-size: 26px;
+        height: 46px;
+        font-size: 13px;
     }
 }
